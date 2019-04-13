@@ -1,0 +1,37 @@
+{
+  "name": "@healty-parser/backned",
+  "version": "1.0.0",
+  "license": "MIT",
+  "description": "",
+  "main": "dist/src/index.js",
+  "typings": "dist/src/index.d.ts",
+  "scripts": {
+    "build": "rm -rf dist && tsc",
+    "lint": "tslint -p .",
+    "test": "mocha --require ts-node/register --recursive \"test/**/*.test.ts\" --exit",
+    "teamcity:test": "mocha --require ts-node/register --reporter mocha-teamcity-reporter --recursive \"test/**/*.test.ts\"  --exit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zaytsev-mxm/healty-parser-backend.git"
+  },
+  "author": "Max Zaytsev",
+  "devDependencies": {
+    "@types/chai": "^4.1.7",
+    "@types/mocha": "^5.2.0",
+    "@types/node": "^10.12.15",
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0",
+    "mocha-teamcity-reporter": "^2.5.1",
+    "pre-commit": "^1.2.2",
+    "ts-node": "^7.0.1",
+    "tslint": "^5.11.0",
+    "tslint-config-airbnb": "^5.11.1",
+    "typescript": "^3.2.2"
+  },
+  "precommit": [
+    "lint",
+    "test",
+    "build"
+  ]
+}
